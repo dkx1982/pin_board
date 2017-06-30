@@ -1,0 +1,11 @@
+= simple_form_for @movie, html:{multipart:true} do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :title
+    = f.input :description
+    = f.input :movie_length
+    = f.input :director
+    = f.input :rating
+    = f.input :image_movie
+  .form-actions
+    = f.button :submit
