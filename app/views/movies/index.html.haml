@@ -3,6 +3,7 @@
 %table
   %thead
     %tr
+      %th
       %th Title
       %th Description
       %th Movie length
@@ -14,6 +15,7 @@
       %tr
         %td= image_tag movie.image_movie.url(:medium)
         %td= movie.title
+        %td= movie.description
         %td= movie.movie_length
         %td= movie.director
         %td= movie.rating
