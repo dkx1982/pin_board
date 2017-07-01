@@ -1,0 +1,13 @@
+%p{:id => "notice"}= notice
+%p
+  %strong Rating:
+  = @review.rating
+%p
+  %strong Comment:
+  = @review.comment
+%p
+  %strong User:
+  = @review.user.email
+= link_to 'Edit', edit_review_path(@review)
+|
+= link_to 'Back', reviews_path
