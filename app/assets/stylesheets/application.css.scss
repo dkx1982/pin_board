@@ -16,25 +16,43 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
-body{
-  background: #E9E9E9;
-}
-h1,h2,h3,h4,h5,h6 {
-  font-weight: 100;
-}
 
-nav {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-  .navbar-brand {
-    a {
-      color: #BD1E23;
-      font-weight: bold;
-      &:hover {
-        text-decoration: none;
-      }
+ body{
+   background: #E9E9E9;
+ }
+ nav {
+   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+   .navbar-brand {
+     a {
+       color: #BD1E23;
+       font-weight: bold;
+       &:hover {
+         text-decoration: none;
+       }
+     }
+   }
+ }
+#movies{
+  .review_title{
+      margin:0 0 20px 0;
     }
+  .reviews{
+      padding: 15px 0;
+      border-bottom: 1px solid #EAEAEA;
+      .star-rating{
+        padding-bottom: 8px;
+      }
   }
 }
+
+
+#pins{
+  h1,h2,h3,h4,h5,h6 {
+    font-weight: 100;
+  }
+
+}
+
 
 #pins{
   margin: 0 auto;
