@@ -1,0 +1,76 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @movie.image_movie.url(:medium)%>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>
+                <strong>Title:</strong>
+                <%= @movie.title %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Description:</strong>
+                  <%= @movie.description %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Movie length:</strong>
+                  <%= @movie.movie_length %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong> Director:</strong>
+                  <%= @movie.director%>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Rating:</strong>
+                  <%= @movie.rating%>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <%= link_to "Write a Review", new_movie_review_path(@movie) %>
+        </div>
+      </div>
+      <div class="col-md-7 col-md-offset-1">
+        <h1 class="review_title"><%= @movie.title %></h1>
+        <p><%= @movie.description %></p>
+        <% if @reviews.blank? %>
+        <h3>No reviews just yet, would you like to add the first!</h3>
+        <% else %>
+        <% @reviews.each do |review| %>
+          <div class="reviews">
+            <!-- 没有将等级⭐️调试出来，视频定格在1:12:30！！ -->
+            <div class="star-rating" data-score= <%= review.rating %> ></div>
+
+            <p><%= review.comment %></p>
+          </div>
+
+        <% end %>
+        <% end %>
+        <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger"%>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to "Edit", edit_movie_path(@movie) %>
+<%= link_to "Back", movies_path %>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: functio(){
+      return $(this).attr('data-score');
+    }
+  });
+</script>

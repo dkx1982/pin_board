@@ -10,11 +10,14 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
+    # @reviews = @movie.reviews
+    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
   end
 
   # GET /movies/new
   def new
     @movie = current_user.movies.new
+
   end
 
   # GET /movies/1/edit
